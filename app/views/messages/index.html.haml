@@ -1,49 +1,54 @@
 .result
 .sidebar
-.user
-  .user__name
-    %p sex on the beach
-  .user__icons
-.groups
-  .group
-    .group__name
-      %p sex on the beaches
-    .group__last-chat
-      %p test
-  .group
-    .group__name
-      %p 50's old lovers
-    .group__last-chat
-      %p 五十路さいこ〜
+  .user
+    .user__name
+      %p sex on the beach
+    .user
+      = link_to "#", class: "config-icon" do
+        %i.fas.fa-cog
+      = link_to "#", class: "edit-icon" do
+        %i.far.fa-edit
+  .groups
+    .group
+      .group__name
+        %p sex on the beaches
+      .group__last-chat
+        %p test
+    .group
+      .group__name
+        %p 50's old lovers
+      .group__last-chat
+        %p 五十路さいこ〜
 .main
-.group-info
-  .group-info__name
-    %h1 sex on the beaches
-  .group-info__member.member
-    %ul.member__list
-      %li doya
-      %li onnakodomo
-      %li sex on the beach
-  .group-info__edit
-  = link_to "#", 'edit'
-.messages
-  .message
-    .message__user-name
-      %h2 sex on the beach
-    .message__date
-      %p 2019/04/02(Tue) 19:12:37
-    .message__text
-      %p test
-  .message
-    .message__user-name
-      %h2 sex on the beach
-    .message__date
-      %p 2019/04/05(Fri) 13:02:11
-    .message__text
-      %p ooooo
-.form
-  .form__input
-    %input type="text" name="text" placeholder="type a message"
-    .img-btn
-    .form__send-btn
-      %input type="submit" value="send"
+  .group-info
+    .group-info__name
+      %h1 sex on the beaches
+    .group-info__member.member
+      %ul.member__list
+        %li doya
+        %li onnakodomo
+        %li sex on the beach
+    .group-info__edit
+      = link_to 'edit', "#"
+  .messages
+    .message
+      .message__user-name
+        %h2 sex on the beach
+      .message__date
+        %p 2019/04/02(Tue) 19:12:37
+      .message__text
+        %p test
+    .message
+      .message__user-name
+        %h2 sex on the beach
+      .message__date
+        %p 2019/04/05(Fri) 13:02:11
+      .message__text
+        %p ooooo
+  .form
+    = form_for @message, html: {class: 'form__input'} do |f|
+      f.text_area :text, :name=>"text", :placeholder=>"type a message"}
+        = link_to "#", class: "image-icon" do
+          %i.far.fa-image
+      .form__send-btn
+        %input{:type=>"submit", :value=>"send"}
