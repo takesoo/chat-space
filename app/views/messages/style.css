@@ -1,0 +1,61 @@
+.result {
+  background-color: #38aef0;
+  color: #ffffff;
+}
+
+.result p {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 300px;
+  color: #ffffff;
+  height: 100vh;
+}
+
+.user {
+  height: 100px;
+  width: 100%;
+  background-color: #253141;
+  padding: 0 20px;
+}
+
+.user__name {
+
+}
+
+.groups {
+  height: calc(100vh-100px);
+  background-color: #2f3e51;
+  margin: 0 20px;
+  width: 100%;
+}
+
+
+.main {
+  width: calc(100vw-300px);
+
+}
+
+.group-info {
+  height: 20%;
+}
+
+
+
+.messages {
+  height: 70%;
+  background-color: #fafafa;
+}
+
+.form {
+  height: 10%;
+  background-color: grey;
+  /*background-color: .messagesのちょっと暗い色*/
+}
+
+
