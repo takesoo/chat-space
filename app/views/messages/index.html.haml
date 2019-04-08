@@ -47,8 +47,7 @@
         %p ooooo
   .form
     = form_for @message, html: {class: 'form__input'} do |f|
-      f.text_area :text, :name=>"text", :placeholder=>"type a message"}
-        = link_to "#", class: "image-icon" do
-          %i.far.fa-image
-      .form__send-btn
-        %input{:type=>"submit", :value=>"send"}
+      = f.text_area :body, {:name=>"text", :placeholder=>"type a message"}
+      = link_to "#", class: "image-icon" do
+        %i.far.fa-image
+        = f.submit "Send"
