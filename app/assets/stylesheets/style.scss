@@ -1,0 +1,18 @@
+.result {
+  background-color: #38aef0;
+  color: #ffffff;
+  text-align: center;
+}
+
+.sidebar {
+  float: left;
+  width: 300px;
+  background-color: #253141;
+  color: #ffffff;
+}
+
+.main {
+  float: right;
+  width: calc(100vw-300px);
+  background-color: grey;
+}
