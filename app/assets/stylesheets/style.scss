@@ -4,15 +4,61 @@
   text-align: center;
 }
 
-.sidebar {
-  float: left;
-  width: 300px;
-  background-color: #253141;
-  color: #ffffff;
-}
+.container {
+  display: flex;
 
-.main {
-  float: right;
-  width: calc(100vw-300px);
-  background-color: grey;
+  .sidebar {
+    width: 300px;
+    color: #ffffff;
+    font-weight: bold;
+    height: 100vh;
+
+    .user {
+      background-color: #253141;
+      height: 20%;
+
+      .user__wrapper {
+        margin: 0 20px;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .user__name {
+          font-size: 16px;
+        }
+
+        .icons i {
+          color: #ffffff;
+        }
+      }
+    }
+
+    .groups {
+      background-color: #2f3e51;
+      height: 80%;
+
+      .groups__wrapper {
+        margin: 0 20px;
+
+        .group {
+          padding: 20px 0 40px;
+
+          .group__name {
+            padding-bottom: 5px;
+            font-size: 15px;
+          }
+
+          .group__last-chat {
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
+
+  .main {
+    width: calc(100vw - 300px);
+    background-color: grey;
+  }
 }
