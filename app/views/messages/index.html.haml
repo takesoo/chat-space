@@ -3,37 +3,37 @@
 .container
   .sidebar
     .user
-      .user__wrapper
-        .user__name
-          %p sex on the beach
-        .icons
-          = link_to "#", class: "config-icon" do
-            %i.fas.fa-cog
-          = link_to "#", class: "edit-icon" do
-            %i.far.fa-edit
+      .user__name
+        %p sex on the beach
+      .icons
+        = link_to "#", class: "config-icon" do
+          %i.fas.fa-cog
+        = link_to "#", class: "edit-icon" do
+          %i.far.fa-edit
     .groups
-      .groups__wrapper
-        .group
-          .group__name
-            %p sex on the beaches
-          .group__last-chat
-            %p test
-        .group
-          .group__name
-            %p 50's old lovers
-          .group__last-chat
-            %p 五十路さいこ〜
+      .group
+        .group__name
+          %p sex on the beaches
+        .group__last-chat
+          %p test
+      .group
+        .group__name
+          %p 50's old lovers
+        .group__last-chat
+          %p 五十路さいこ〜
   .main
     .group-info
-      .group-info__name
-        %h1 sex on the beaches
-      .group-info__member.member
-        %ul.member__list
-          %li doya
-          %li onnakodomo
-          %li sex on the beach
+      .group-info__wrapper
+        .group-info__name
+          %h1 sex on the beaches
+        .group-info__member
+          %ul.member__list
+            %li.member__list_title Member :
+            %li.member doya
+            %li.member onnakodomo
+            %li.member sex on the beach
       .group-info__edit
-        = link_to 'edit', "#"
+        = link_to 'Edit', "#", class: "edit-btn"
     .messages
       .message
         .message__user-name
