@@ -15,7 +15,7 @@
 
     .user {
       background-color: #253141;
-      height: 100px;
+      height: 90px;
       padding: 0 20px;
       display: flex;
       justify-content: space-between;
@@ -32,7 +32,7 @@
 
     .groups {
       background-color: #2f3e51;
-      height: calc(100vh - 100px);
+      height: calc(100vh - 90px);
       padding: 0 20px;
 
       .group {
@@ -56,10 +56,11 @@
 
     .group-info {
       background-color: #ffffff;
-      height: 100px;
+      height: 90px;
       padding: 0 40px;
       display: flex;
       justify-content: space-between;
+      border-bottom: solid 1px #eeeeee;
 
 
       .group-info__wrapper {
@@ -100,10 +101,51 @@
 
     .messages {
       height: 70%;
+      background-color: #fafafa;
+      padding: 0 40px;
+
+      .message {
+        padding-top: 40px;
+
+        .message__header {
+          display: flex;
+          align-items:baseline;
+
+          .message__user-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #434a54;
+          }
+
+          .message__date {
+            font-size: 12px;
+            color: #999999;
+            margin-left: 10px;
+          }
+        }
+
+        .message__text {
+          margin-top: 10px;
+          font-size: 14px;
+          color: #434a54;
+        }
+
+      }
     }
 
     .form {
-      height: 15%;
+      height: 90px;
+
+      .form__input {
+        padding: 0 40px;
+        display: flrx;
+        align-items: center;
+
+        .input-box {
+          background-color: #ffffff;
+          height: 50px;
+        }
+      }
     }
   }
 }

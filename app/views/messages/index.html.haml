@@ -36,22 +36,25 @@
         = link_to 'Edit', "#", class: "edit-btn"
     .messages
       .message
-        .message__user-name
-          %h2 sex on the beach
-        .message__date
-          %p 2019/04/02(Tue) 19:12:37
+        .message__header
+          .message__user-name
+            %h2 sex on the beach
+          .message__date
+            %p 2019/04/02(Tue) 19:12:37
         .message__text
           %p test
       .message
-        .message__user-name
-          %h2 sex on the beach
-        .message__date
-          %p 2019/04/05(Fri) 13:02:11
+        .message__header
+          .message__user-name
+            %h2 sex on the beach
+          .message__date
+            %p 2019/04/05(Fri) 13:02:11
         .message__text
           %p ooooo
     .form
       = form_for @message, html: {class: 'form__input'} do |f|
-        = f.text_area :body, {:name=>"text", :placeholder=>"type a message"}
-        = link_to "#", class: "image-icon" do
-          %i.far.fa-image
-          = f.submit "Send"
+        .input-box
+          = f.text_area :body, {:size => "50x1", :name=>"text", :placeholder=>"type a message"}
+          = link_to "#", class: "image-icon" do
+            %i.far.fa-image
+        = f.submit "Send"
