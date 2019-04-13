@@ -13,44 +13,44 @@
     .groups
       .group
         .group__name
-          %p sex on the beaches
+          %p group1
         .group__last-chat
-          %p test
+          %p commentA
       .group
         .group__name
-          %p 50's old lovers
+          %p group2
         .group__last-chat
-          %p 五十路さいこ〜
+          %p comment2
   .main
     .group-info
       .group-info__wrapper
         .group-info__name
-          %h1 sex on the beaches
+          %h1 group1
         .group-info__member
           %ul.member__list
             %li.member__list_title Member :
-            %li.member doya
-            %li.member onnakodomo
-            %li.member sex on the beach
+            %li.member aaaaaa
+            %li.member bbbbbb
+            %li.member cccccc
       .group-info__edit
         = link_to 'Edit', "#", class: "edit-btn"
     .messages
       .message
         .message__header
           .message__user-name
-            %h2 sex on the beach
+            %h2 aaaaaa
           .message__date
             %p 2019/04/02(Tue) 19:12:37
         .message__text
-          %p test
+          %p commentA
       .message
         .message__header
           .message__user-name
-            %h2 sex on the beach
+            %h2 bbbbbb
           .message__date
             %p 2019/04/05(Fri) 13:02:11
         .message__text
-          %p ooooo
+          %p commentB
     .form
       = form_for @message, html: {class: 'form__input'} do |f|
         .input-box
