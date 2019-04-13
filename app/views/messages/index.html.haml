@@ -11,16 +11,7 @@
         = link_to "#", class: "config-icon" do
           %i.fas.fa-cog
     .groups
-      .group
-        .group__name
-          %p group1
-        .group__last-chat
-          %p commentA
-      .group
-        .group__name
-          %p group2
-        .group__last-chat
-          %p comment2
+      = render partial: 'group'
   .main
     .group-info
       .group-info__wrapper
@@ -35,22 +26,7 @@
       .group-info__edit
         = link_to 'Edit', "#", class: "edit-btn"
     .messages
-      .message
-        .message__header
-          .message__user-name
-            %h2 aaaaaa
-          .message__date
-            %p 2019/04/02(Tue) 19:12:37
-        .message__text
-          %p commentA
-      .message
-        .message__header
-          .message__user-name
-            %h2 bbbbbb
-          .message__date
-            %p 2019/04/05(Fri) 13:02:11
-        .message__text
-          %p commentB
+      = render partial: 'message'
     .form
       = form_for @message, html: {class: 'form__input'} do |f|
         .input-box
