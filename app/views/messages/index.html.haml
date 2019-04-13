@@ -12,6 +12,8 @@
           %i.fas.fa-cog
     .groups
       = render partial: 'group'
+      = render partial: 'group'
+      = render partial: 'group'
   .main
     .group-info
       .group-info__wrapper
@@ -26,6 +28,8 @@
       .group-info__edit
         = link_to 'Edit', "#", class: "edit-btn"
     .messages
+      = render partial: 'message'
+      = render partial: 'message'
       = render partial: 'message'
     .form
       = form_for @message, html: {class: 'form__input'} do |f|
