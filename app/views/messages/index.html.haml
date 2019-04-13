@@ -34,8 +34,8 @@
     .form
       = form_for @message, html: {class: 'form__input'} do |f|
         .input-box
-          = f.text_field :body, {:name=>"text", :placeholder=>"type a message", :class=>"text_field"}
+          = f.text_field :body, {name: :text, placeholder: "type a message", class: "text_field"}
           %label
             %i.far.fa-image.image-icon
-            = f.file_field :datafile, {:class=>"input__file"}
-        = f.submit "Send", {:class=>"input__btn"}
+            = f.file_field :datafile, {class: "input__file"}
+        = f.submit "Send", {class: "input__btn"}
