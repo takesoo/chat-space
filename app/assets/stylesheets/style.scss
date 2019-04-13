@@ -28,7 +28,7 @@ $sidebar-padding: 0 20px;
       font-weight: bold;
 
 
-        .user__name {
+        &__name {
           font-size: 16px;
         }
 
@@ -45,12 +45,12 @@ $sidebar-padding: 0 20px;
       .group {
         padding: 20px 0 40px;
 
-        .group__name {
+        &__name {
           padding-bottom: 5px;
           font-size: 15px;
         }
 
-        .group__last-chat {
+        &__last-chat {
           font-size: 11px;
         }
       }
@@ -69,7 +69,7 @@ $sidebar-padding: 0 20px;
       border-bottom: solid 1px #eeeeee;
 
 
-      .group-info__wrapper {
+      &__wrapper {
 
         .group-info__name {
           padding-top: 35px;
@@ -93,7 +93,7 @@ $sidebar-padding: 0 20px;
       }
 
 
-      .group-info__edit {
+      &__edit {
         align-self: center;
 
         .edit-btn {
@@ -114,7 +114,7 @@ $sidebar-padding: 0 20px;
       .message {
         padding-bottom: 40px;
 
-        .message__header {
+        &__header {
           display: flex;
           align-items:baseline;
 
@@ -134,7 +134,7 @@ $sidebar-padding: 0 20px;
           }
         }
 
-        .message__text {
+        &__text {
           margin-top: 10px;
           font-size: 14px;
           color: #434a54;
@@ -148,7 +148,7 @@ $sidebar-padding: 0 20px;
       background-color: #ddd;
         padding: 20px 40px;
 
-      .form__input {
+      &__input {
         display: flex;
         align-items: center;
         width: 100%;
