@@ -4,12 +4,12 @@
   .sidebar
     .user
       .user__name
-        %p sex on the beach
+        %p testuser
       .icons
-        = link_to "#", class: "config-icon" do
-          %i.fas.fa-cog
         = link_to "#", class: "edit-icon" do
           %i.far.fa-edit
+        = link_to "#", class: "config-icon" do
+          %i.fas.fa-cog
     .groups
       .group
         .group__name
@@ -54,7 +54,7 @@
     .form
       = form_for @message, html: {class: 'form__input'} do |f|
         .input-box
-          = f.text_area :body, {:size => "50x1", :name=>"text", :placeholder=>"type a message"}
+          = f.text_field :body, {:name=>"text", :placeholder=>"type a message", :class=>"text_field"}
           = link_to "#", class: "image-icon" do
             %i.far.fa-image
-        = f.submit "Send"
+        = f.submit "Send", {:class=>"input__btn"}
