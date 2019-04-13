@@ -167,6 +167,14 @@
             top: 10px;
             right: 10px;
             font-size: 25px;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+
+          .input__file {
+            display: none;
           }
         }
 
