@@ -2,5 +2,9 @@
 @import "./variable";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+* {
+  box-sizing: border-box;
+}
 @import "./style";
-@import "./user"
+@import "./user";
+@import "./notification";
