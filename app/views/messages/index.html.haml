@@ -4,9 +4,10 @@
   .sidebar
     .user
       .user__name
-        %p testuser
+        %p
+          = current_user.name
       .icons
-        = link_to edit_user_path(@user), class: "edit-icon" do
+        = link_to edit_user_path(current_user), class: "edit-icon" do
           %i.far.fa-edit
         = link_to "#", class: "config-icon" do
           %i.fas.fa-cog
