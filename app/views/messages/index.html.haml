@@ -1,19 +1,5 @@
-.result
-  %p グループを作成しました
 .container
-  .sidebar
-    .user
-      .user__name
-        %p testuser
-      .icons
-        = link_to "#", class: "edit-icon" do
-          %i.far.fa-edit
-        = link_to "#", class: "config-icon" do
-          %i.fas.fa-cog
-    .groups
-      = render partial: 'group'
-      = render partial: 'group'
-      = render partial: 'group'
+  = render 'shared/sidebar'
   .main
     .group-info
       .group-info__wrapper
@@ -26,16 +12,16 @@
             %li.member bbbbbb
             %li.member cccccc
       .group-info__edit
-        = link_to 'Edit', "#", class: "edit-btn"
+        = link_to 'Edit', "/groups/1/edit", class: "edit-btn"
     .messages
-      = render partial: 'message'
-      = render partial: 'message'
-      = render partial: 'message'
-    .form
-      = form_for @message, html: {class: 'form__input'} do |f|
-        .input-box
-          = f.text_field :body, {name: :text, placeholder: "type a message", class: "text_field"}
-          %label
-            %i.far.fa-image.image-icon
-            = f.file_field :datafile, {class: "input__file"}
-        = f.submit "Send", {class: "input__btn"}
+      = render 'message'
+      = render 'message'
+      = render 'message'
+    / .form
+    /   = form_for @message, html: {class: 'form__input'} do |f|
+    /     .input-box
+    /       = f.text_field :body, {name: :text, placeholder: "type a message", class: "text_field"}
+    /       %label
+    /         %i.far.fa-image.image-icon
+    /         = f.file_field :datafile, {class: "input__file"}
+    /     = f.submit "Send", {class: "input__btn"}
