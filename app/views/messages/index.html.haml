@@ -12,7 +12,7 @@
             %li.member bbbbbb
             %li.member cccccc
       .group-info__edit
-        = link_to 'Edit', edit_group(@group), class: "edit-btn"
+        = link_to 'Edit', edit_group(cuurent_user.groups), class: "edit-btn"
     .messages
       = render 'message'
       = render 'message'
