@@ -1,18 +1,5 @@
 .container
-  .sidebar
-    .user
-      .user__name
-        %p
-          = current_user.name
-      .icons
-        = link_to "#", class: "edit-icon" do
-          %i.far.fa-edit
-        = link_to edit_user_path(current_user), class: "config-icon" do
-          %i.fas.fa-cog
-    .groups
-      = render 'group'
-      = render 'group'
-      = render 'group'
+  = render 'shared/sidebar'
   .main
     .group-info
       .group-info__wrapper
@@ -30,11 +17,11 @@
       = render 'message'
       = render 'message'
       = render 'message'
-    .form
-      = form_for @message, html: {class: 'form__input'} do |f|
-        .input-box
-          = f.text_field :body, {name: :text, placeholder: "type a message", class: "text_field"}
-          %label
-            %i.far.fa-image.image-icon
-            = f.file_field :datafile, {class: "input__file"}
-        = f.submit "Send", {class: "input__btn"}
+    / .form
+    /   = form_for @message, html: {class: 'form__input'} do |f|
+    /     .input-box
+    /       = f.text_field :body, {name: :text, placeholder: "type a message", class: "text_field"}
+    /       %label
+    /         %i.far.fa-image.image-icon
+    /         = f.file_field :datafile, {class: "input__file"}
+    /     = f.submit "Send", {class: "input__btn"}

@@ -8,6 +8,11 @@ $sidebar-padding: 0 20px;
     width: 300px;
     color: #ffffff;
 
+    & a {
+      color: white;
+      text-decoration: none;
+    }
+
     .user {
       background-color: #253141;
       height: $header-height;
