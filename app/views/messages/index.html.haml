@@ -14,14 +14,12 @@
       .group-info__edit
         = link_to 'Edit', edit_group_path(@group), class: "edit-btn"
     .messages
-      = render 'message'
-      = render 'message'
-      = render 'message'
+      = render @messages
     .form
-      = form_for [@group, @message], html: {class: 'form__input'} do |f|
-        .input-box
-          = f.text_field :body, {name: :text, placeholder: "type a message", class: "text_field"}
-          %label
-            %i.far.fa-image.image-icon
-            = f.file_field :datafile, {class: "input__file"}
-        = f.submit "Send", {class: "input__btn"}
+      = form_for [@group, @message] do |f|
+        = f.text_field :body, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            %i.far.fa-image
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
