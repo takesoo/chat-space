@@ -14,9 +14,7 @@
       .group-info__edit
         = link_to 'Edit', edit_group_path(@group), class: "edit-btn"
     .messages
-      = render 'message'
-      = render 'message'
-      = render 'message'
+      = render @messages
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :body, class: 'form__message', placeholder: 'type a message'

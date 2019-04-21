@@ -1,8 +1,11 @@
 .message
   .message__header
     .message__user-name
-      %h2 aaaaaa
+      %h2= message.user.name
     .message__date
-      %p 2019/04/02(Tue) 19:12:37
+      %p= message.created_at.strftime("%Y/%m/%d %H:%M")
   .message__text
-    %p commentA
+    - if message.body.present?
+      %p.lower-message__content
+        = message.body
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
