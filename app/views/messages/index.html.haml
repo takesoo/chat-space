@@ -8,9 +8,8 @@
         .group-info__member
           %ul.member__list
             %li.member__list_title Member :
-            %li.member aaaaaa
-            %li.member bbbbbb
-            %li.member cccccc
+            - @group.users.each do |user|
+              %li.member= user.name
       .group-info__edit
         = link_to 'Edit', edit_group_path(@group), class: "edit-btn"
     .messages
