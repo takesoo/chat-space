@@ -39,14 +39,13 @@ $(function () {
       var html = buildHTML(data)
       $(".messages").append(html);
       var position = $(".messages")[0].scrollHeight;
-      console.log($(".messages"));
-      console.log($(".messages")[0]);
-      console.log($(".messages").prevObject);
-      console.log(position);
       $(".messages").animate({scrollTop:position});
     })
     .fail(function () {
-      alert(error);
+      alert("メッセージの送信に失敗しました");
+    })
+    .always(function () {
+      $(".form__submit").removeAttr("disabled");
     })
   })
 })
