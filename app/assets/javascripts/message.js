@@ -1,4 +1,27 @@
 $(function () {
+  function buildHTML(message) {
+    if (message.body !== null) {var text = `<p class="lower-message__content">${message.body}</p>`} else {var text = ""}
+    if (message.image.url !== null) {var image = `<img class="lower-message__image" src=${message.image.url}></img>`} else {var image = ""}
+    var html = `<div class="message">
+                  <div class="message__header">
+                    <div class="message__user-name">
+                      <h2>
+                        ${ message.user_name }
+                      </h2>
+                    </div>
+                    <div class="message__date">
+                      <p>
+                        ${ message.created_at }
+                      </p>
+                    </div>
+                  </div>
+                  <div class="message__text">
+                    ${ text }
+                    ${ image }
+                  </div>
+                </div>`
+    return html
+  }
   $("#new_message").on("submit", function (e) {
     e.preventDefault();
     var formData = new FormData(this);
@@ -11,6 +34,19 @@ $(function () {
       dataType: "json",
       processData: false,
       contentType: false
-    });
+    })
+    .done(function (data) {
+      var html = buildHTML(data)
+      $(".messages").append(html);
+      var position = $(".messages")[0].scrollHeight;
+      console.log($(".messages"));
+      console.log($(".messages")[0]);
+      console.log($(".messages").prevObject);
+      console.log(position);
+      $(".messages").animate({scrollTop:position});
+    })
+    .fail(function () {
+      alert(error);
+    })
   })
 })
