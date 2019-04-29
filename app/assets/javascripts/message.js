@@ -1,7 +1,7 @@
 $(function () {
   function buildMessageHTML(message) {
-    if (message.body !== null) {var text = `<p class="lower-message__content">${message.body}</p>`} else {var text = ""}
-    if (message.image.url !== null) {var image = `<img class="lower-message__image" src=${message.image.url}></img>`} else {var image = ""}
+    var text = message.body !== null ?  `<p class="lower-message__content">${message.body}</p>` : ""
+    var image = message.image.url !== null ? `<img class="lower-message__image" src=${message.image.url}></img>` :  ""
     var html = `<div class="message">
                   <div class="message__header">
                     <div class="message__user-name">
