@@ -1,5 +1,5 @@
 $(function () {
-  function buildHTML(message) {
+  function buildMessageHTML(message) {
     if (message.body !== null) {var text = `<p class="lower-message__content">${message.body}</p>`} else {var text = ""}
     if (message.image.url !== null) {var image = `<img class="lower-message__image" src=${message.image.url}></img>`} else {var image = ""}
     var html = `<div class="message">
@@ -35,8 +35,8 @@ $(function () {
       processData: false,
       contentType: false
     })
-    .done(function (data) {
-      var html = buildHTML(data)
+    .done(function (messageData) {
+      var html = buildMessageHTML(messageData)
       $(".messages").append(html);
       var position = $(".messages")[0].scrollHeight;
       $(".messages").animate({scrollTop:position});
