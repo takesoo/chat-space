@@ -49,4 +49,7 @@ $(function () {
     buildAddHTML(user_data)
   });
 
+  $(document).on('click', '.js-remove-btn', function () {
+    $(this).parent().remove()
+  });
 })
