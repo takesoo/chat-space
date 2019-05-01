@@ -26,6 +26,11 @@
         %div{id: "chat-group-user-#{current_user.id}", class: "chat-group-user clearfix"}
           %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
           %p.chat-group-user__name= current_user.name
+        - @members.each do |member|
+          %div{id: "chat-group-user-#{member.id}", class: "chat-group-user clearfix"}
+            %input{name: "group[user_ids][]", type: "hidden", value: member.id}
+            %p.chat-group-user__name= member.name
+            .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right

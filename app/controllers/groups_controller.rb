@@ -7,6 +7,7 @@ class GroupsController < ApplicationController
   def new
     @group = Group.new
     @group.users << current_user
+    @members
   end
 
   def create
@@ -19,6 +20,9 @@ class GroupsController < ApplicationController
   end
 
   def edit  
+    # current_userを除いたメンバーの配列をビューに渡す
+    # deleteメソッドを使うとデータベースからcurrent_userが削除されてしまう
+    @members = @group.users
   end
 
   def update
