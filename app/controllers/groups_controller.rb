@@ -7,7 +7,7 @@ class GroupsController < ApplicationController
   def new
     @group = Group.new
     @group.users << current_user
-    @members
+    group_members
   end
 
   def create
@@ -19,8 +19,8 @@ class GroupsController < ApplicationController
     end
   end
 
-  def edit  
-    @members = @group.users.where.not(name: current_user[:name])
+  def edit
+    group_members
   end
 
   def update
@@ -40,4 +40,9 @@ class GroupsController < ApplicationController
   def set_group
     @group = Group.find(params[:id])
   end
+
+  def group_members
+    @members = @group.users.where.not(name: current_user[:name])
+  end
+  
 end
