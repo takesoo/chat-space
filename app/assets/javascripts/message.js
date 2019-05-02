@@ -2,7 +2,7 @@ $(function () {
   function buildMessageHTML(message) {
     var text = message.body !== null ?  `<p class="lower-message__content">${message.body}</p>` : ""
     var image = message.image.url !== null ? `<img class="lower-message__image" src=${message.image.url}></img>` :  ""
-    var html = `<div class="message">
+    var html = `<div class="message" data-id=${message.id}>
                   <div class="message__header">
                     <div class="message__user-name">
                       <h2>
@@ -48,4 +48,21 @@ $(function () {
       $(".form__submit").removeAttr("disabled");
     })
   })
+
+  var reloadMessages = function() {
+    var last_message_id = $(".message").data(id);
+    $.ajax({
+      url: `/groups/${message.group.id}/api/messages`,
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages){
+      console.log('success')
+      console.log(messages)
+    })
+    .fail(function(){
+      console.log('error')
+    })
+  }
 })
