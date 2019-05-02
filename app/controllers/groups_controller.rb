@@ -20,9 +20,7 @@ class GroupsController < ApplicationController
   end
 
   def edit  
-    # current_userを除いたメンバーの配列をビューに渡す
-    # deleteメソッドを使うとデータベースからcurrent_userが削除されてしまう
-    @members = @group.users
+    @members = @group.users.where.not(name: current_user[:name])
   end
 
   def update
