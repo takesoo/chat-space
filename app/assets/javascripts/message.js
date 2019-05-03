@@ -50,16 +50,17 @@ $(function () {
   })
 
   var reloadMessages = function() {
-    last_message_id = $(".message:last-child").data('id');
+    var last_message_id = $(".message:last-child").data('id')
+    var group_id = $(".message:last-child").data('group-id')
+    var url = `/groups/${group_id}/api/messages`
     $.ajax({
-      url: location.href,
+      url: url,
       type: 'get',
       dataType: 'json',
       data: {id: last_message_id}
     })
     .done(function(messages){
-      console.log(messages)
-      var insertHTML = '';
+      var insertHTML = [];
       messages.forEach(function (message) {
         insertHTML = buildMessageHTML(message)
         $(".messages").append(insertHTML);
@@ -67,9 +68,8 @@ $(function () {
         $(".messages").animate({scrollTop:position});
       });
     })
-    .fail(function(messages){
+    .fail(function(){
       console.log('error')
-      console.log(messages)
     })
   }
   setInterval(reloadMessages, 5000);
