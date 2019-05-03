@@ -50,19 +50,27 @@ $(function () {
   })
 
   var reloadMessages = function() {
-    var last_message_id = $(".message").data(id);
+    last_message_id = $(".message:last-child").data('id');
     $.ajax({
-      url: `/groups/${message.group.id}/api/messages`,
+      url: location.href,
       type: 'get',
       dataType: 'json',
       data: {id: last_message_id}
     })
     .done(function(messages){
-      console.log('success')
+      console.log(messages)
+      var insertHTML = '';
+      messages.forEach(function (message) {
+        insertHTML = buildMessageHTML(message)
+        $(".messages").append(insertHTML);
+        var position = $(".messages")[0].scrollHeight;
+        $(".messages").animate({scrollTop:position});
+      });
+    })
+    .fail(function(messages){
+      console.log('error')
       console.log(messages)
     })
-    .fail(function(){
-      console.log('error')
-    })
   }
+  setInterval(reloadMessages, 5000);
 })
