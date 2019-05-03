@@ -72,5 +72,10 @@ $(function () {
       console.log('error')
     })
   }
-  setInterval(reloadMessages, 5000);
+  var pathname = location.pathname.match(/messages/)
+  var reg = RegExp(pathname);
+  if(reg.test("messages")){
+    setInterval(reloadMessages, 5000);
+  }
+
 })
