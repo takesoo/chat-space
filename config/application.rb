@@ -20,5 +20,8 @@ module ChatSpace
 
     config.i18n.default_locale = :ja
 
+    # タイムゾーンを東京(JST +9:00)に設定
+    config.time_zone = 'Tokyo'
+
   end
 end
