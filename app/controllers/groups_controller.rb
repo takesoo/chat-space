@@ -44,5 +44,5 @@ class GroupsController < ApplicationController
   def group_members
     @members = @group.users.where.not(id: current_user[:id])
   end
-  
+
 end
